@@ -2,7 +2,8 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -98,7 +99,7 @@
                     <div id="view-cart">
                         <a href="#">
                             {{ HTML::image("img/blue-cart.gif",
-                                            "View Cart") }}
+                                            "View Cart") }} View Cart
                         </a>
                     </div><!-- end view-cart -->
                 </section><!-- end action-bar -->
@@ -108,7 +109,9 @@
 
             <section id="main-content" class="clearfix">
                 @if(Session::has('message'))
-                    
+                <p class="alert">
+                    {{ Session::get('message') }}
+                </p>
                 @endif
 
                 @yield('content')
@@ -118,7 +121,8 @@
 
             <footer>
                 <section id="contact">
-                    <h3>For phone orders please call 1-800-000. You<br>can also email us at <a href="mailto:office@shop.com">office@shop.com</a></h3>
+                    <h3>For phone orders please call 1-800-000.
+                        You<br>can also email us at <a href="mailto:office@shop.com">office@shop.com</a></h3>
                 </section><!-- end contact -->
 
                 <hr />
@@ -168,25 +172,25 @@
                     </div><!-- end connect -->
                     <div id="payments">
                         <h4>SUPPORTED PAYMENT METHODS</h4>
-                        <img src="img/payment-methods.gif" alt="Supported Payment Methods">
+                        {{ HTML::image("img/payment-methods.gif", "Supported Payment Methods") }}
                     </div><!-- end payments -->
                 </section>
             </footer>
         </div><!-- end wrapper -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script>window.jQuery || document.write("{{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}")</script>
+        {{ HTML::script('js/plugins.js') }}
+        {{ HTML::script('js/main.js') }}
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-(function(d, t) {
-    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-    g.src = '//www.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g, s)
-}(document, 'script'));
+            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+            (function(d, t) {
+                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                g.src = '//www.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));
         </script>
     </body>
 </html>
