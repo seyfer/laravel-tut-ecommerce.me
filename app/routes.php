@@ -23,6 +23,7 @@ Route::pattern('id', '[0-9]+');
 Route::resource('/', 'SnippetsController');
 Route::get('/', array("as" => "newSnippet", "uses" => "SnippetsController@create"));
 Route::get('/{id}', array("as" => "showSnippet", "uses" => "SnippetsController@show"));
+Route::get('/{id}/fork', array("as" => "forkSnippet", "uses" => "SnippetsController@fork"));
 
 Route::controller("admin/categories", 'CategoriesController');
 

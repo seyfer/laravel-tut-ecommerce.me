@@ -23,10 +23,10 @@ class SnippetsController extends \BaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($snippet = '')
     {
         //
-        return View::make("snippets/create");
+        return View::make("snippets/create")->with("snippet", $snippet);
     }
 
     /**
@@ -62,7 +62,22 @@ class SnippetsController extends \BaseController
         //
         $snippet = Snippet::find($id);
 
+        if (!$snippet) {
+            return Redirect::to("/");
+        }
+
         return View::make("snippets/show", $snippet->toArray());
+    }
+
+    public function fork($id)
+    {
+        $snippet = Snippet::find($id);
+
+        if (!$snippet) {
+            return Redirect::to("/");
+        }
+
+        return $this->create($snippet->snippet);
     }
 
     /**

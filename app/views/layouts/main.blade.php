@@ -15,7 +15,10 @@
 
         {{ HTML::style('css/normalize.css') }}
         {{ HTML::style('css/main.css') }}
+
+        {{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}
         {{ HTML::script('js/vendor/modernizr-2.6.2.min.js') }}
+        {{ HTML::script('js/vendor/jquery.textarea.min.js') }}
     </head>
     <body>
         <!--[if lt IE 7]>
