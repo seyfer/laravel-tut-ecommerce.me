@@ -6,8 +6,6 @@
  * @package  Laravel
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
-ini_set("dispaly_errors", 1);
-error_reporting(E_ALL);
 
 /*
   |--------------------------------------------------------------------------

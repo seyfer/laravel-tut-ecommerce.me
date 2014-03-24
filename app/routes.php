@@ -11,8 +11,19 @@
   |
  */
 
-Route::get('/', function() {
-    return View::make('hello');
-});
+Route::pattern('id', '[0-9]+');
+
+//array('before' => 'auth')
+//Route::group(array(), function() {
+//    Route::get('/', array("as" => "newSnippet", "uses" => "SnippetsController@create"));
+//    Route::get('new', array("as" => "newSnippet", "uses" => "SnippetsController@create"));
+//});
+//
+//короче
+Route::resource('/', 'SnippetsController');
+Route::get('/', array("as" => "newSnippet", "uses" => "SnippetsController@create"));
+Route::get('/{id}', array("as" => "showSnippet", "uses" => "SnippetsController@show"));
 
 Route::controller("admin/categories", 'CategoriesController');
+
+

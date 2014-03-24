@@ -1,0 +1,1 @@
+/home/seyfer/www/laravel-tut-ecommerce.me/app/views/snippets/edit.blade.php
