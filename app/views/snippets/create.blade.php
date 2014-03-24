@@ -10,9 +10,12 @@
 </div>
 
 {{ Form::close() }}
+@stop
 
+@section('scripts')
 <script>
     $('textarea').tabby();
+    $('textarea').height($(window).height() - 50);
 </script>
 @stop
 

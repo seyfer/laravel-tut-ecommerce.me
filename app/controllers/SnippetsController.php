@@ -25,7 +25,6 @@ class SnippetsController extends \BaseController
      */
     public function create($snippet = '')
     {
-        //
         return View::make("snippets/create")->with("snippet", $snippet);
     }
 
@@ -36,11 +35,12 @@ class SnippetsController extends \BaseController
      */
     public function store()
     {
-        //
-//        echo 'store';
-//        var_export(Input::all());
-//        exit();
         //validate
+        $validationErrors = Snippet::validate(Input::all());
+
+        if ($validationErrors) {
+            return Redirect::route("newSnippet");
+        }
 
         $newSnippet = Snippet::create(array(
                     "snippet" => Input::get('snippet')

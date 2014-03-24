@@ -16,7 +16,7 @@
         <!--{{ HTML::style('css/normalize.css') }}-->
         {{ HTML::style('css/vendor/bootstrap.min.css') }}
         {{ HTML::style('css/vendor/bootstrap-theme.min.css') }}
-        <!--{{ HTML::style('google-code-prettify/prettify.css') }}-->
+        {{ HTML::style('google-code-prettify/prettify.css') }}
         {{ HTML::style('google-code-prettify/sons-of-obsidian.css') }}
         {{ HTML::style('css/snippet.css') }}
 

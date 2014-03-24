@@ -6,7 +6,7 @@
 <div class="btn-group snippet-nav">
     {{ HTML::linkRoute("forkSnippet", "Fork", array("id" => $id),
             array("class" => "btn btn-warning")) }}
-    {{ HTML::linkRoute("newSnippet", "New", '', array("class" => "btn btn-success")) }}
+    {{ HTML::linkRoute("newSnippet", "New", array(), array("class" => "btn btn-success")) }}
 </div>
 
 @stop
