@@ -1,1 +1,5 @@
-<?php var_export($snippet);
+@extends('layouts.master')
+
+@section('container')
+    <pre>{{{ $snippet }}}</pre>
+@stop
