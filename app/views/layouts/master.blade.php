@@ -14,21 +14,24 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!--{{ HTML::style('css/normalize.css') }}-->
-        {{ HTML::style('css/snippet.css') }}
+        {{ HTML::style('css/vendor/bootstrap.min.css') }}
+        {{ HTML::style('css/vendor/bootstrap-theme.min.css') }}
         <!--{{ HTML::style('google-code-prettify/prettify.css') }}-->
         {{ HTML::style('google-code-prettify/sons-of-obsidian.css') }}
+        {{ HTML::style('css/snippet.css') }}
 
         {{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}
         {{ HTML::script('js/vendor/modernizr-2.6.2.min.js') }}
         {{ HTML::script('js/vendor/jquery.textarea.min.js') }}
+        {{ HTML::script('js/vendor/bootstrap.min.js') }}
         {{ HTML::script('google-code-prettify/prettify.js') }}
     </head>
     <body>
 
-        @yield('container')
+        <div class="snippet-container">
+            @yield('container')
+        </div>
 
-        <script>
-            @yield('scripts')
-        </script>
+        @yield('scripts')
     </body>
 </html>

@@ -2,10 +2,15 @@
 
 @section('container')
 <pre class="prettyprint linenums">{{{ $snippet }}}</pre>
-{{ HTML::linkRoute("forkSnippet", "Fork", array("id" => $id)) }}
-{{ HTML::linkRoute("newSnippet", "New") }}
+
+<div class="btn-group snippet-nav">
+    {{ HTML::linkRoute("forkSnippet", "Fork", array("id" => $id),
+            array("class" => "btn btn-warning")) }}
+    {{ HTML::linkRoute("newSnippet", "New", '', array("class" => "btn btn-success")) }}
+</div>
+
 @stop
 
 @section('scripts')
-prettyPrint();
+<script>prettyPrint();</script>
 @stop

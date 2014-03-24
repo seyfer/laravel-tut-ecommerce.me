@@ -1,11 +1,14 @@
 @extends('layouts.master')
 
 @section('container')
-{{ Form:: open(array('url'=>'/', 'class'=>'form')) }}
-{{ Form::textarea('snippet', $snippet) }}
+{{ Form:: open(array('url'=>'/', 'class'=>'form-horizontal')) }}
+{{ Form::textarea('snippet', $snippet, array('class' => 'form-control')) }}
 
-{{ HTML::linkRoute("newSnippet", "Reset") }}
-{{ Form::submit('Save') }}
+<div class="btn-group snippet-nav">
+    {{ HTML::linkRoute("newSnippet", "Reset", array(), array("class" => "btn btn-danger")) }}
+    {{ Form::submit('Save', array("class" => "btn btn-success")) }}
+</div>
+
 {{ Form::close() }}
 
 <script>
